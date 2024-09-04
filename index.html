@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="nav.css">
+
+
+<style>
+    main {
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .imageDiv img {
+        width: 300px;
+        height: 300px;
+        border-radius: 10%;
+        ;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .personalDiv {
+        display: flex;
+        width: 500px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        line-height: 1.5;
+        color: white;
+        font-size: 50px;
+    }
+
+    .iconDiv :hover {
+        scale: 1.09;
+        cursor: pointer;
+    }
+
+    .aboutDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainAbout {
+        display: flex;
+        max-width: 900px;
+        background-color: black;
+        color: white;
+        flex-direction: column;
+        height: 400px;
+        padding: 30px;
+        border-radius: 40px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    
+    .contentAbt {
+        max-width: 500px;
+        height: 325px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .personalDiv {
+            /* margin: 20px; */
+            align-items: center;
+            line-height: normal;
+            width: 400px;
+        }
+
+        .target {
+            height: 150px;
+        }
+
+        
+
+        main {
+            height: 1500px;
+        }
+
+        .aboutDiv,
+        .mainAbout {
+            height: auto;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <p class="navName">Usman Shaikh</p>
+        <ul class="navOpt">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="achievement.html">Achievements</a></li>
+            <li><a href="projects.html">Working On & Projects Page</a></li>
+        </ul>
+        <div class="menu-icon">&#9776;</div>
+    </nav>
+
+
+    <main>
+        <div class="container">
+            <div class="imageDiv">
+                <img width="300px" height="300pxs" src="images/profile.png" alt="Usman's Photo">
+            </div>
+
+            <div class="personalDiv">
+                <div class="namePersonal">
+                    <span>Hi, it's </span><span class="red">Usman</span>
+                </div>
+                <span style="font-size: 30px;">Learn About My</span>
+                <span class="target red">Personal bio</span>
+                <div class="iconDiv">
+                    <i class="fa-brands red fa-square-github"></i>
+                    <i class="fa-brands red fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="aboutDiv">
+            <div class="mainAbout">
+                <p style="font-size: 30px;">About Me</p>
+
+                <div class="contentAbt">
+                    <span>Description: </span>
+                    <span class="bioInfo">A highly skilled and detail-oriented civil engineer with extensive
+                        experience in
+                        planning, designing, estimating, and managing construction projects. Proficient in AutoCAD
+                        and
+                        Excel,
+                        with a strong background in project management, ensuring the successful completion of
+                        projects on
+                        time and within budget.
+                    </span>
+                    <span>Place of Birth and date: </span>
+                    <span>Mumbai India, 9 May 2003</span>
+                    <span>Academics</span>
+                    <span>SSC 2019 72.18%, HSC 2021 81.67%, B. Tech 2021-2025 7.5 CGPA(AVg)</span>
+                    <span>Email: </span>
+                    <span>uuusman2003@gmail.com</span>
+                    <span>Phone No: </span>
+                    <span>+91 86526 57424</span>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+<script src="nav.js"></script>
+<script>
+    let addCont = document.querySelector('.target');
+    const obj = {
+        n1: "Personal bio",
+        n2: "Achievements",
+        n3: "Projects & Working On "
+    }
+    let index = 1;
+    let interval = setInterval(function () {
+        if (index == 3) {
+            index = 1;
+            let key = `n${index}`;
+            let kObl = obj[key];
+            addCont.textContent = `${kObl}`;
+        } else {
+            index++;
+            let key = `n${index}`;
+            let kObl = obj[key];
+            addCont.textContent = kObl;
+        }
+    }, 2000)
+
+</script>
+
+</html>
