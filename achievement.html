@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement</title>
+    <link rel="stylesheet" href="nav.css">
+</head>
+<style>
+    main {
+        margin: 30px 0 30px 0;
+        color: white;
+    }
+
+    .mainCont {
+        margin: 50px;
+        
+    }
+
+    .contTitle {
+        margin: 30px;
+        font-size: 30px;
+    }
+
+    .description{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .targetImg{
+        transition: left 1s ease-in-out;
+    }
+
+    @media (max-width: 768px){
+        .description{
+            flex-direction: column;
+            justify-content: space-arounds;
+            height: 600px;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <p class="navName">Usman Shaikh</p>
+        <ul class="navOpt">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="achievement.html">Achievements</a></li>
+            <li><a href="projects.html">Working On & Projects Page</a></li>
+        </ul>
+        <div class="menu-icon">&#9776;</div>
+    </nav>
+    <main>
+        <p style="font-size: 45px; margin: 20px;">My Achievements</p>
+        <hr>
+        <div class="mainCont">
+            <!-- <hr> -->
+            <p class="contTitle">1. Mood Indigo</p>
+            <div class="description">
+                <img style="border-radius: 30px;" width="300px " height="300px"
+                    src="images/moodIndigo.jpg" alt="">
+                <p style="font-size: 20px; max-width: 200px;">Participated in Mood Indigo 2023 IIT Bombay</p>
+            </div>
+        </div>
+        <div class="mainCont">
+            <hr>
+            <p class="contTitle">2. KREATE competition</p>
+            <div class="description">
+                <img class="targetImg" style="border-radius: 30px;" width="300px " height="300px"
+                    src="images/Kreate1.jpg" alt="">
+                <p style="font-size: 20px; max-width: 200px;">Participated in KREATE competition 11 may 2024 By kalika steels Pvt Ltd</p>
+            </div>
+        </div>
+        <div class="mainCont">
+            <hr>
+            <p class="contTitle">3. Debate competition</p>
+            <div class="description">
+                <img class="debateTarget" style="border-radius: 30px;" width="300px " height="300px"
+                    src="images/debatePrize.png" alt="">
+                <p style="font-size: 20px; max-width: 200px;">Won 1st Prize in Debate competition organised by YIN Network in the year</p>
+            </div>
+        </div>
+        
+    </main>
+</body>
+<script>
+    const obj = {
+        i1 : 'images/Kreate1.jpg',
+        i2 : 'images/Kreate2.jpg',
+        i3 : 'images/Kreate3.jpg'
+    }
+
+    const debate = {
+        a1 : 'images/debatePrize.png',
+        a2 : 'images/prizeDebate.jpg'
+    }
+
+    let index = 1;
+    let targetImg = document.querySelector('.targetImg');
+    let interval = setInterval(function(){
+        if(index==4){
+            index = 1;
+            let key = `i${index}`;
+            let objKey = obj[key];
+            targetImg.src = `${objKey}`;
+        }else{
+            let key = `i${index}`;
+            let objKey = obj[key];
+            targetImg.src = `${objKey}`;
+        }
+        index++;
+    }, 2000)
+    
+    let newImg = document.querySelector('.debateTarget')
+    let nIndex = 1;
+
+    let newInterval = setInterval(function(){
+        if(nIndex==3){
+            nIndex = 1;
+            let nkey = `a${nIndex}`;
+            let nObjkey = debate[nkey];
+            newImg.src = `${nObjkey}`;
+        }else{
+            let nkey = `a${nIndex}`;
+            let nObjkey = debate[nkey];
+            newImg.src = `${nObjkey}`;
+        }
+        nIndex++;   
+    },2000)
+</script>
+
+</html>
